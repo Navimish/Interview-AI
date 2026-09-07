@@ -66,22 +66,30 @@ const [activeSection, setActiveSection] = useState("technical");
 
 async function handleGenerateResume(){
 
-  setLoading(true);
- 
-  const pdf = await generateResume({interviewID})
-  const url = window.URL.createObjectURL(pdf);
+  try{
 
-  const link = document.createElement('a');
+    setLoading(true);
+   
+    const pdf = await generateResume({interviewID})
+    const url = window.URL.createObjectURL(pdf);
+  
+    const link = document.createElement('a');
+  
+    link.href = url;
+  
+    link.download = 'improved-resume.pdf'
+  
+    link.click();
+  
+    window.URL.revokeObjectURL(url);
+  }catch(err){
+    console.log(err);
+  }finally{
 
-  link.href = url;
+    setLoading(false);
+  }
 
-  link.download = 'improved-resume.pdf'
 
-  link.click();
-
-  window.URL.revokeObjectURL(url);
-
-  setLoading(false);
 
 }
 
