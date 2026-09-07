@@ -8,7 +8,7 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin: 'https://interview-ai-two-lemon.vercel.app',
+    origin: 'https://interview-g33egbtq7-navneet-mishras-projects-932533c6.vercel.app',
     credentials: true
 }));
 
