@@ -49,7 +49,11 @@ async function register(req,res){
             {expiresIn :"1D"}
         )
 
-        res.cookie('token',token);
+        res.cookie('token', token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'none'
+});
 
         res.status(201).json({
             message : "User Created Successfully",
@@ -108,7 +112,11 @@ async function login(req,res){
 
     )
 
-    res.cookie("token",token);
+    res.cookie('token', token, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'none'
+});
 
        res.status(200).json({
         message:"User Login Successfull",
@@ -134,7 +142,11 @@ async function logout(req,res){
         })
     }
 
-    res.clearCookie('token');
+    res.clearCookie('token', {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'none'
+});
 
     res.status(200).json({
         message : "User Logged Out SuccessFully"

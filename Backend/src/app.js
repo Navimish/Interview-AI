@@ -8,9 +8,9 @@ const cors = require('cors');
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-    origin:'http://localhost:5173',
+    origin: 'https://interview-ai-two-lemon.vercel.app',
     credentials: true
-}))
+}));
 
 app.use('/api/auth',userRoute);
 app.use('/api/interview',interviewRoute);

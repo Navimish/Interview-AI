@@ -1,10 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL : 'http://localhost:3000',
-    withCredentials : true
-})
-
+    baseURL: 'https://interview-ai-w6wz.onrender.com',
+    withCredentials: true
+});
 
 export async function generateReport({selfDescription, jobDescription, resume}){
 
