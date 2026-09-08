@@ -123,9 +123,7 @@ if (!report) {
             Interview dashboard
           </h1>
 
-          <p className="mt-1.5 text-sm text-[#8A8F98]">
-            Full Stack Developer · Navneet Sharma
-          </p>
+         
         </div>
 
         <div className="rounded-2xl px-6 py-4 text-right" style={cardStyle}>
