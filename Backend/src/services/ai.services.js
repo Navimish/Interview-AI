@@ -297,7 +297,8 @@ IMPORTANT:
         const page = await browser.newPage();
 
         await page.setContent(html, {
-            waitUntil: 'networkidle0'
+            waitUntil: 'domcontentloaded',
+            timeout: 60000
         });
 
         // Convert HTML to PDF
